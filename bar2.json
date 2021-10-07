@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 600,
+    "height": 600,
+    "title": "Car accidents in Victoria by month and light condition",
+    "data": {
+        "url": "https://raw.githubusercontent.com/corner-in-clouds/Xiaoyun.github.io/main/data/a2indexed.csv"
+      },
+    "mark":"bar",
+    "encoding": {
+        "x":{
+            "field":"ACCIDENT_DATE",
+            "timeUnit":"month",
+            "title":"month",
+            "type":"nominal"
+        },
+        "y":{
+            "aggregate":"count","field":"OBJECTID", "title":"number of accidents","stack":null
+        },
+        "color":{
+            "field":"LIGHT_CONDITION"
+        },
+        "opacity": {"value": 1},
+        "tooltip":[
+          {"field":"LIGHT_CONDITION","type":"nominal",             "title":"Light condition"}
+        ]
+    }
+    }
+  
